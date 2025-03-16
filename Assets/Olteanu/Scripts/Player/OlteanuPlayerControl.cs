@@ -3,6 +3,7 @@ using UnityEngine;
 public class OlteanuPlayerControl : MonoBehaviour
 {
     public float vitezaDeMiscare;
+    public Animator anim;
 
 
     private void Update()
@@ -14,5 +15,14 @@ public class OlteanuPlayerControl : MonoBehaviour
 
         miscareDeInput.Normalize();
         transform.position += miscareDeInput * vitezaDeMiscare * Time.deltaTime;
+
+        if(miscareDeInput != Vector3.zero)
+        {
+            anim.SetBool("inMiscare", true);
+        }
+        else
+        {
+            anim.SetBool("inMiscare", false);
+        }
     }
 }
