@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class OlteanuPlayerControl : MonoBehaviour
 {
-    public float moveSpeed;
+    public float vitezaDeMiscare;
+
 
     private void Update()
     {
-        Vector3 moveInput = new Vector3(0f, 0f, 0f);
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
+        Vector3 miscareDeInput = new Vector3(0f, 0f, 0f);
 
-        moveInput.Normalize();
-        transform.position += moveInput * moveSpeed * Time.deltaTime;
+        miscareDeInput.x = Input.GetAxisRaw("Horizontal");
+        miscareDeInput.y = Input.GetAxisRaw("Vertical");
+
+        miscareDeInput.Normalize();
+        transform.position += miscareDeInput * vitezaDeMiscare * Time.deltaTime;
     }
 }
